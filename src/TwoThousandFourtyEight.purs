@@ -2,11 +2,11 @@
 -- | the blog post "Implementing the game 2048 in less than 90 lines of Haskell"
 -- | by Gregor Ulm (http://gregorulm.com/2048-in-90-lines-haskell/)
 
-module Main where
+module TwoThousandFourtyEight where
 
 import Prelude
 import Data.List.Types (List(..), (:))
-import Data.List (filter, length, concat)
+import Data.List (filter, length, concat, transpose, reverse)
 import Data.Unfoldable (replicate)
 
 data Move = Up | Down | Left | Right
@@ -32,7 +32,7 @@ combine x        = x
 
 -- | Given the Grid and Move, do merge for all rows in the Grid.
 move :: Grid -> Move -> Grid
-move grid Left  = map merge grid -- TODO: different ruling for different moves
-move grid Up    = map merge grid
-move grid Down  = map merge grid
-move grid Right = map merge grid
+move grid Left  = map merge grid
+move grid Right = map reverse $ map merge (reverse grid)
+move grid Up    = transpose $ move (transpose grid) Left
+move grid Down  = transpose $ move (transpose grid) Right

@@ -1,4 +1,4 @@
-# 2048 in Purescript
+# TwoThousandFourtyEight
 This project aims to implement the famous game [2048](https://en.wikipedia.org/wiki/2048_(video_game)) in purescript. It may (~~will~~) contain design errors and other quirks, as this is just made to increase my functional programming skills.
 
 ## Acknowledgments
