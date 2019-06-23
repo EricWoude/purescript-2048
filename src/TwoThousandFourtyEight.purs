@@ -18,7 +18,6 @@ grid = ((0 : 0 : 0 : 0 : Nil) :
         (0 : 0 : 0 : 0 : Nil) :
         (0 : 0 : 2 : 2 : Nil) : Nil)
 
-
 -- | Takes a list, removes the zeros, adds duplicate neighbouring numbers and adds padding.
 merge :: List Int -> List Int
 merge xs = concat (combined : padding : Nil)
@@ -33,6 +32,6 @@ combine x        = x
 -- | Given the Grid and Move, do merge for all rows in the Grid.
 move :: Grid -> Move -> Grid
 move grid Left  = map merge grid
-move grid Right = map reverse $ map merge (reverse grid)
+move grid Right = map reverse $ move (map reverse grid) Left
 move grid Up    = transpose $ move (transpose grid) Left
 move grid Down  = transpose $ move (transpose grid) Right
