@@ -2,7 +2,7 @@
 -- | the blog post "Implementing the game 2048 in less than 90 lines of Haskell"
 -- | by Gregor Ulm (http://gregorulm.com/2048-in-90-lines-haskell/)
 
-module TwoThousandFourtyEight where
+module TwoThousandFortyEight where
 
 import Prelude
 import Data.List.Types (List(..), (:))
