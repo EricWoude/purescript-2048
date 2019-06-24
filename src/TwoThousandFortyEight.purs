@@ -30,8 +30,8 @@ combine (x:y:xs) = if x == y then x * 2 : combine (xs) else x : combine (y:xs)
 combine x        = x
 
 -- | Given the Grid and Move, do merge for all rows in the Grid.
-move :: Grid -> Move -> Grid
-move grid Left  = map merge grid
-move grid Right = map reverse $ move (map reverse grid) Left
-move grid Up    = transpose $ move (transpose grid) Left
-move grid Down  = transpose $ move (transpose grid) Right
+move :: Move -> Grid -> Grid
+move Left  grid' = map merge grid'
+move Right grid' = map reverse $ move Left (map reverse grid')
+move Up    grid' = transpose $ move Left (transpose grid')
+move Down  grid' = transpose $ move Right (transpose grid')

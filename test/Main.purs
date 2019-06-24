@@ -38,7 +38,7 @@ gridDown = ((0 : 0 : 0 : 0 : Nil) :
 
 main :: Effect Unit
 main = do
-  assert (move grid Up    == gridUp)
-  assert (move grid Down  == gridDown)
-  assert (move grid Left  == gridLeft)
-  assert (move grid Right == gridRight)
+  assert (move Up    grid == gridUp)
+  assert (move Down  grid == gridDown)
+  assert (move Left  grid == gridLeft)
+  assert (move Right grid == gridRight)
