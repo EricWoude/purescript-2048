@@ -12,6 +12,7 @@ import Data.Unfoldable (replicate)
 data Move = Up | Down | Left | Right
 type Grid = List (List Int)
 
+-- | The grid represents the 'board' of 2048 in row-column fashion.
 grid :: Grid
 grid = ((0 : 0 : 0 : 0 : Nil) :
         (0 : 0 : 0 : 0 : Nil) :
