@@ -1,0 +1,26 @@
+{
+  "name": "twothousandfourtyeight",
+  "version": "0.0.1",
+  "description": "Implements the game 2048 using Purescript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "develop": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricWoude/purescript-2048.git"
+  },
+  "keywords": [
+    "purescript",
+    "2048"
+  ],
+  "author": "Eric van der Woude",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EricWoude/purescript-2048/issues"
+  },
+  "homepage": "https://github.com/EricWoude/purescript-2048#readme"
+}
