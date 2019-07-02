@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "parcel serve src/index.html"
+    "develop": "parcel src/index.html"
   },
   "repository": {
     "type": "git",

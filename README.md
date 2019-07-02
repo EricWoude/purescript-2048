@@ -7,7 +7,7 @@ To install all needed packages run `bower i` from the root folder. This project 
 
 ### Environment
 1. Make sure the purescript code builds using command `pulp --watch build`.
-2. Start the Javascript development environment: `npm run dev`.
+2. Start the Javascript development environment: `npm run develop`.
 3. The environment will be hosted at `localhost:1234`
 
 ### Testing
