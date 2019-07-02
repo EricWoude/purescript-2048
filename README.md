@@ -1,10 +1,15 @@
 # TwoThousandFortyEight
 This project aims to implement the famous game [2048](https://en.wikipedia.org/wiki/2048_(video_game)) in purescript. It may (~~will~~) contain design errors and other quirks, as this is just made to increase my functional programming skills.
 
-## Installing
-To install all needed packages run `bower i` from the root folder.
+## Development
+### Installing
+To install all needed packages run `bower i` from the root folder. This project uses [Parcel](https://parceljs.org/) for bundling the application, so make sure you have installed Parcel by running `npm install -g parcel-bundler`.
 
-## Running the tests
+### Environment
+1. Start the Javascript development environment: `npm run dev`.
+2. Make sure the purescript code builds using command `pulp --watch build`.
+
+### Testing
 To start the test suite, run `pulp test` from the root folder.
 
 ## Acknowledgments
