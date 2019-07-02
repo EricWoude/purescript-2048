@@ -6,8 +6,9 @@ This project aims to implement the famous game [2048](https://en.wikipedia.org/w
 To install all needed packages run `bower i` from the root folder. This project uses [Parcel](https://parceljs.org/) for bundling the application, so make sure you have installed Parcel by running `npm install -g parcel-bundler`.
 
 ### Environment
-1. Start the Javascript development environment: `npm run dev`.
-2. Make sure the purescript code builds using command `pulp --watch build`.
+1. Make sure the purescript code builds using command `pulp --watch build`.
+2. Start the Javascript development environment: `npm run dev`.
+3. The environment will be hosted at `localhost:1234`
 
 ### Testing
 To start the test suite, run `pulp test` from the root folder.
