@@ -4,10 +4,18 @@
 
 module TwoThousandFortyEight where
 
-import Prelude
+import Prelude (class Show, Unit, map, show, ($), (*), (+), (-), (==), (>))
+import Control.Monad.Free (Free)
+import Partial.Unsafe (unsafePartial)
 import Data.List.Types (List(..), (:))
-import Data.List (filter, length, concat, transpose, reverse)
+import Data.List (filter, length, concat, transpose, reverse, (!!), (..))
 import Data.Unfoldable (replicate)
+import Data.Maybe (fromJust)
+import Data.Foldable (foldMap)
+
+import Text.Smolder.HTML (table, td, tr) as H
+import Text.Smolder.Markup (MarkupM, text) as H
+import Text.Smolder.Renderer.String (render)
 
 data Move = Up | Down | Left | Right
 type Grid = List (List Int)
@@ -36,3 +44,15 @@ move Left  grid' = map merge grid'
 move Right grid' = map reverse $ move Left (map reverse grid')
 move Up    grid' = transpose $ move Left (transpose grid')
 move Down  grid' = transpose $ move Right (transpose grid')
+
+-- | Takes the grid and returns the grid content in HTML table elements.
+buildTable :: ∀ t27 t5. Show t5 => List (List t5) -> Free (H.MarkupM t27) Unit
+buildTable grid' = H.table $ foldMap row (0 .. 3)
+  where row i = H.tr $ foldMap (cell i) (0 .. 3)
+        cell i j = H.td (H.text (show $ content i j ))
+        content i j = unsafePartial fromJust $ (concat grid') !! (i * 4 + j)
+
+-- | Returns the grid as string which is to be used in the Javascript application.
+renderTable :: String
+renderTable = do
+  render (buildTable grid)
