@@ -1,14 +1,8 @@
-import {main} from '../output/Main/index'
+import TwoThousandFortyEight from '../output/TwoThousandFortyEight/index'
 
-const app = document.getElementById('app')
-
+/* Triggers the keyControl function as soon as a key is released.
+ * This function will only listen for the arrow keys. */
 document.onkeydown = keyControl;
-
-/* Takes the grid as HTML string and appends it to the app. */
-const drawGrid = () => {
-    app.insertAdjacentHTML('beforeend', main)
-}
-
 function keyControl(event) {
     switch(event.keyCode) {
         case 37: // left arrow
@@ -23,6 +17,12 @@ function keyControl(event) {
         case 40: // down arrow
             break
     }
+}
+
+/* Takes the grid as HTML string and appends it to the app. */
+const drawGrid = () => {
+    const app = document.getElementById('app')
+    app.insertAdjacentHTML('beforeend',TwoThousandFortyEight.renderTable)
 }
 
 drawGrid()
